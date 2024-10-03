@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIDDO - Inicio</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+    <img src="Screenshot_2024-09-26_at_2.55.46_PM-removebg-preview.png" alt="Logo de KIDDO">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#home">KIDDO</a></li>
+        <li><a href="sucursales.html">Sucursales</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="menu.html">Menú</a></li>
+      </ul>
+    </nav>
+  </header>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+
+    <!-- Importación de fuentes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
+    
+    <!-- Enlace a CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contact_form">
+        <form id="contactForm">
+            <h1>Contacto</h1>
+            <h3>Completa el formulario de contacto y te responderemos en brevedad.</h3>
+
+            <label for="nombre">Nombre:</label>
+            <input type="search" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="thankYouMessage">
+            <h2>¡Gracias por tu mensaje!</h2>
+            <p>Nos pondremos en contacto contigo en brevedad.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            // Ocultar el formulario y mostrar el mensaje de agradecimiento
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+                </div>
+            <div>
+                <footer>
+                    <ul class="social">
+                        <li><a href="https://www.instagram.com/kiddo.arg/?hl=es/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </footer>
+            
+        </body>
+        </html>

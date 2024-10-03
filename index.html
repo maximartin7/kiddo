@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIDDO - Inicio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Importar iconos de redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="Screenshot_2024-09-26_at_2.55.46_PM-removebg-preview.png" alt="Logo de KIDDO">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#home">KIDDO</a></li>
+        <li><a href="sucursales.html">Sucursales</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="menu.html">Menú</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección Hero / Slider -->
+<section class="hero" id="home">
+  <div class="slider-container">
+    <div class="slider">
+      <img src="Screenshot 2024-09-27 at 4.19.30 PM.png" alt="Slider Image 1">
+      <img src="Screenshot 2024-09-27 at 4.21.00 PM.png" alt="Slider Image 2">
+      <img src="Screenshot 2024-09-27 at 4.21.56 PM.png" alt="Slider Image 3">
+    </div>
+    <div class="hero-text">
+      <h1>KIDDO</h1>
+      <p>Los mejores haciendo hamburguesas.</p>
+    </div>
+
+    <!-- Botones de control -->
+    <div class="controls">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Incluimos el script al final del body -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slider img');
+  const totalSlides = slides.length;
+  let slideInterval;
+
+  function showSlide(index) {
+    // Verifica si el índice está dentro de los límites
+    if (index >= totalSlides) {
+      currentSlide = 0; // Regresa a la primera imagen
+    } else if (index < 0) {
+      currentSlide = totalSlides - 1; // Va a la última imagen
+    } else {
+      currentSlide = index; // Muestra la imagen correspondiente
+    }
+
+    // Desplazamiento del slider
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(-${currentSlide * 33.3}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1); // Muestra la siguiente imagen
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1); // Muestra la imagen anterior
+  }
+
+  // Cambio automático de las imágenes cada 5 segundos
+  function startSlideShow() {
+    slideInterval = setInterval(nextSlide, 5000); // Auto-slide cada 5 segundos
+  }
+
+  // Detener el auto-slide cuando se usan los botones
+  function stopSlideShow() {
+    clearInterval(slideInterval);
+  }
+
+  // Eventos de los botones de control
+  document.querySelector('.next').addEventListener('click', () => {
+    stopSlideShow(5); // Detiene el auto-slide
+    nextSlide(5);     // Cambia a la siguiente imagen
+    startSlideShow(); // Reinicia el auto-slide
+  });
+
+  document.querySelector('.prev').addEventListener('click', (hhhhhh) => {
+    stopSlideShow(); // Detiene el auto-slide
+    prevSlide();     // Cambia a la imagen anterior
+    startSlideShow(); // Reinicia el auto-slide
+  });
+
+  // Inicia el slideshow al cargar la página
+  window.onload = startSlideShow;
+</script>
+
+  <!-- Sección de Productos -->
+<h>Productos Destacados</h>
+  <section class="productos" id="menu">
+    <div class="productos-container">
+      <div class="producto">
+        <img src="Screenshot 2024-09-27 at 4.21.56 PM.png" alt="Producto 1">
+        <h3>Producto 1</h3>
+        <p>Descripción breve del producto.</p>
+        
+      </div>
+      <div class="producto">
+        <img src="Screenshot 2024-09-27 at 4.19.30 PM.png" alt="Producto 2">
+        <h3>Producto 2</h3>
+        <p>Descripción breve del producto.</p>
+        
+      </div>
+      <div class="producto">
+        <img src="Screenshot 2024-09-27 at 4.21.00 PM.png" alt="Producto 3">
+        <h3>Producto 3</h3>
+        <p>Descripción breve del producto.</p>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>© KIDDO. Todos los derechos reservados.</p>
+      <ul class="social">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
