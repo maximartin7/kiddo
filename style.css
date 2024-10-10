@@ -186,8 +186,6 @@ img{max-width: 100%}
 .producto p {
   margin-bottom: 20px;
 }
-.anuncio h4
- 
 /* ------------------ PIE DE PÁGINA ------------------ */
 footer {
   background-color: #2B338B;
@@ -221,7 +219,7 @@ padding-bottom:30px }
 .social li a:hover {
   color: #F39236;
 }
-anuncio {width: 100%}
+anuncio {width:727px}
 iframe{width: 100%}
 /* ------------------ MEDIA QUERIES ------------------ */
 /* Para pantallas con ancho máximo de 1024px */
@@ -260,7 +258,77 @@ iframe{width: 100%}
   .navbar ul li a {
     padding: 10px 0;
   }
+/* Estilo del body */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
+/* Contenedor del formulario */
+.contact-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Estilo del formulario */
+.contact_form h1, .contact_form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact_form p {
+    margin-bottom: 20px;
+}
+
+.contact_form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact_form input[type="text"],
+.contact_form input[type="email"],
+.contact_form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact_form textarea {
+    height: 100px;
+}
+
+.contact_form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact_form button:hover {
+    background-color: #c0392b;
+}
+
+/* Adaptación para dispositivos pequeños */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+}
   /* Ajustes del footer en pantallas más pequeñas */
   footer {
     padding: 20px;
