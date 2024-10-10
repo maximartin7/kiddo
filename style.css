@@ -273,4 +273,35 @@ iframe{width: 100%}
   .social li {
     margin: 5px 0;
   }
+}/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor responsivo del video */
+.video-container {
+    position: relative;
+    width: 100%; /* El video ocupa el ancho completo del contenedor */
+    padding-bottom: 56.25%; /* Proporción 16:9 (altura/ancho = 9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+}
+
+/* Estilos del iframe para que sea adaptable */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* El video ocupa el 100% del contenedor */
+    height: 100%; /* Mantiene la altura basada en la relación 16:9 */
+    border: none; /* Sin borde */
+}
+
+/* Para pantallas más pequeñas (opcional) */
+@media (max-width: 768px) {
+    .video-container {
+        padding-bottom: 75%; /* Si quieres una proporción diferente para móviles */
+    }
 }
