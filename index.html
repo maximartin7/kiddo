@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KIDDO - Inicio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Importar iconos de redes sociales -->
+  <!-- Importar iconos de redes sociales y lightbox -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 </head>
 <body>
 
@@ -27,124 +29,89 @@
   </header>
 
   <!-- Sección Hero / Slider -->
-<section class="hero" id="home">
-  <div class="slider-container">
-    <div class="slider">
-      <img src="burga.png" alt="Slider Image 1">
-      <img src="hamburguesa.png" alt="Slider Image 2">
-      <img src="IMG_1553.jpg" alt="Slider Image 3">
-    </div>
-    <div class="hero-text">
-      <h1>KIDDO</h1>
-      <p>Los mejores haciendo hamburguesas.</p>
-    </div>
-
-    <!-- Botones de control -->
-    <div class="controls">
-      <button class="prev" onclick="prevSlide()">&#10094;</button>
-      <button class="next" onclick="nextSlide()">&#10095;</button>
-    </div>
-  </div>
-</section>
-
-<!-- Incluimos el script al final del body -->
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slider img');
-  const totalSlides = slides.length;
-  let slideInterval;
-
-  function showSlide(index) {
-    // Verifica si el índice está dentro de los límites
-    if (index >= totalSlides) {
-      currentSlide = 0; // Regresa a la primera imagen
-    } else if (index < 0) {
-      currentSlide = totalSlides - 1; // Va a la última imagen
-    } else {
-      currentSlide = index; // Muestra la imagen correspondiente
-    }
-
-    // Desplazamiento del slider
-    const slider = document.querySelector('.slider');
-    slider.style.transform = `translateX(-${currentSlide * 33.3}%)`;
-  }
-
-  function nextSlide() {
-    showSlide(currentSlide + 1); // Muestra la siguiente imagen
-  }
-
-  function prevSlide() {
-    showSlide(currentSlide - 1); // Muestra la imagen anterior
-  }
-
-  // Cambio automático de las imágenes cada 5 segundos
-  function startSlideShow() {
-    slideInterval = setInterval(nextSlide, 5000); // Auto-slide cada 5 segundos
-  }
-
-  // Detener el auto-slide cuando se usan los botones
-  function stopSlideShow() {
-    clearInterval(slideInterval);
-  }
-
-  // Eventos de los botones de control
-  document.querySelector('.next').addEventListener('click', () => {
-    stopSlideShow(5); // Detiene el auto-slide
-    nextSlide(5);     // Cambia a la siguiente imagen
-    startSlideShow(); // Reinicia el auto-slide
-  });
-
-  document.querySelector('.prev').addEventListener('click', (hhhhhh) => {
-    stopSlideShow(); // Detiene el auto-slide
-    prevSlide();     // Cambia a la imagen anterior
-    startSlideShow(); // Reinicia el auto-slide
-  });
-
-  // Inicia el slideshow al cargar la página
-  window.onload = startSlideShow;
-</script>
-
-  <!-- Sección de Productos -->
-<h1>Productos Destacados</h1>
-  <section class="productos" id="menu">
-    <div class="productos-container">
-      <div class="producto">
-        <img src="hamburguesa.png" alt="Producto 1">
-        <h3>Producto 1</h3>
-        <p>Descripción breve del producto.</p>
-        
+  <section class="hero" id="home">
+    <div class="slider-container">
+      <div class="slider">
+        <img src="burga.png" alt="Slider Image 1">
+        <img src="hamburguesa.png" alt="Slider Image 2">
+        <img src="ham.jpg" alt="Slider Image 3">
       </div>
-      <div class="producto">
-        <img src="burga.png" alt="Producto 2">
-        <h3>Producto 2</h3>
-        <p>Descripción breve del producto.</p>
-        
+      <div class="hero-text">
+        <h1>KIDDO</h1>
+        <p>Los mejores haciendo hamburguesas.</p>
       </div>
-      <div class="producto">
-        <img src="ham.jpg" alt="Producto 3">
-        <h3>Producto 3</h3>
-        <p>Descripción breve del producto.</p>
-       
+
+      <!-- Botones de control -->
+      <div class="controls">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-	<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,">
-    <title>Anuncio Adaptable</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<iframe src="https://guadaolaviaga.github.io/guadalupe-olaviaga-/anuncio.html" width="728" height="90" style="border: none;" title="Anuncio de otro sitio"></iframe>
+  <!-- Incluimos el script al final del body -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+    const totalSlides = slides.length;
+    let slideInterval;
 
-</body>
-</html>
+    function showSlide(index) {
+      if (index >= totalSlides) currentSlide = 0;
+      else if (index < 0) currentSlide = totalSlides - 1;
+      else currentSlide = index;
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(-${currentSlide * 33.3}%)`;
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+
+    function startSlideShow() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideShow() { clearInterval(slideInterval); }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      stopSlideShow();
+      nextSlide();
+      startSlideShow();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      stopSlideShow();
+      prevSlide();
+      startSlideShow();
+    });
+
+    window.onload = startSlideShow;
+  </script>
+
+  <!-- Sección de Productos -->
+  <h1>Productos Destacados</h1>
+  <section class="productos" id="menu">
+    <div class="productos-container">
+      <div class="producto">
+        <h3>PARK</h3>
+        <a href="grande.png" data-lightbox="roadtrip"><img src="hamburguesa.png" alt="PARK"></a>
+      </div>
+      <div class="producto">
+        <h3>TRIPLE CHEDDAR </h3>
+        <a href="2.png" data-lightbox="roadtrip"><img src="burga.png" alt="TRIPLE"></a>
+      </div>
+      <div class="producto">
+        <h3>MELVIN</h3>
+        <a href="3.png" data-lightbox="roadtrip"><img src="ham.jpg" alt="MELVIN"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anuncio adaptable en footer -->
   <footer>
     <div class="footer-content">
       <p>© KIDDO. Todos los derechos reservados.</p>
+      <iframe src="https://guadaolaviaga.github.io/guadalupe-olaviaga-/anuncio.html" width="728" height="90" style="border: none;" title="Anuncio de otro sitio"></iframe>
       <ul class="social">
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -155,5 +122,7 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
+  

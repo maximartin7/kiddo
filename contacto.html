@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIDDO - Inicio</title>
+  <title>KIDDO - Nosotros</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <!-- Header -->
   <header>
     <div class="logo-container">
-    <img src="logo.png" alt="Logo de KIDDO">
+      <img src="logo.png" alt="Logo de KIDDO">
     </div>
     <nav class="navbar">
       <ul>
@@ -23,41 +23,41 @@
       </ul>
     </nav>
   </header>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto</title>
+<body style="font-family: 'Montserrat', sans-serif; margin: 0; padding: 0;">
 
-    <!-- Importación de fuentes -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
-    
-    <!-- Enlace a CSS externo -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <!-- Contenedor del formulario de contacto -->
+    <div style="max-width: 600px; margin: 50px auto; padding: 20px; background-color: #f7f7f7; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <div class="contact_form" style="text-align: center;">
+            <form id="contactForm" style="display: flex; flex-direction: column;">
+                <h1 style="color: #FF6600; margin-bottom: 20px;">Contacto</h1>
+                <h3 style="color: #333; margin-bottom: 30px;">Completa el formulario y te responderemos en brevedad.</h3>
 
-    <div class="contact_form">
-        <form id="contactForm">
-            <h1>Contacto</h1>
-            <h3>Completa el formulario de contacto y te responderemos en brevedad.</h3>
+                <!-- Campo Nombre -->
+                <label for="nombre" style="text-align: left; font-weight: 500;">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required 
+                    style="padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
 
-            <p><label for="nombre">Nombre:</label>
-            <input type="search" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required></p>
+                <!-- Campo Email -->
+                <label for="email" style="text-align: left; font-weight: 500;">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email" required 
+                    style="padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; width: 100%; box-sizing: border-box;">
 
-            <p><label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="Ingresa tu email" required></p>
+                <!-- Campo Mensaje -->
+                <label for="mensaje" style="text-align: left; font-weight: 500;">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required 
+                    style="padding: 10px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; height: 150px;"></textarea>
 
-           <p> <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea></p>
-
-           <p> <button type="submit">Enviar</button></p>
-        </form>
-
-        <div id="thankYouMessage">
-            <h2>¡Gracias por tu mensaje!</h2>
-            <p>Nos pondremos en contacto contigo en brevedad.</p>
+                <!-- Botón Enviar -->
+                <button type="submit" 
+                    style="padding: 10px 20px; background-color: #FF6600; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Enviar</button>
+            </form>
         </div>
+    </div>
+
+    <!-- Mensaje de agradecimiento -->
+    <div id="thankYouMessage" style="display: none; text-align: center; padding: 50px;">
+        <h2>¡Gracias por tu mensaje!</h2>
+        <p>Nos pondremos en contacto contigo en brevedad.</p>
     </div>
 
     <script>
@@ -69,9 +69,18 @@
             document.getElementById('thankYouMessage').style.display = 'block';
         });
     </script>
-                <footer>
-                    <ul class="social">
-                        <li><a href="https://www.instagram.com/kiddo.arg/?hl=es/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </footer>
-            
+
+    <!-- Footer -->
+    <footer style="background-color: #003366; color: white; padding: 20px; text-align: center;">
+        <div class="footer-content">
+            <p>© KIDDO. Todos los derechos reservados.</p>
+            <ul class="social" style="list-style: none; padding: 0;">
+                <li style="display: inline; margin-right: 10px;"><a href="#" style="color: white;"><i class="fa fa-facebook"></i> Facebook</a></li>
+                <li style="display: inline; margin-right: 10px;"><a href="#" style="color: white;"><i class="fa fa-instagram"></i> Instagram</a></li>
+                <li style="display: inline;"><a href="#" style="color: white;"><i class="fa fa-twitter"></i> Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
