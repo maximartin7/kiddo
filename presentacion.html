@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Presentación - Martin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {margin: 0; padding: 0; list-style: none;}
+body { background-color: white; color: #1B84E3; font-family: "DM Sans", sans-serif; }
+header { color: #E98214; }
+a { color: #1B84E3; text-decoration: none; }
+p { color: #484848; }
+
+/* Estilos de los slides */
+	.slides {width: 100%}
+.slider, .slide { width: 100%; background-color: #1B84E3;height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; }
+.caja { width: 100%; border-bottom: solid 1px #1B84E3; color: #E98214; align-items: center}
+.titulo { font-size: 3em; margin: 1rem 0; color: #E98214; }
+.texto { color: #1F1F1F; font-size: 1.5em; }
+
+/* Botones de control del slider */
+.control-prev, .control-next { position: absolute; top: 50%; transform: translateY(-50%); background-color: orangered; border: none; color: #fff; font-size: 2em; cursor: pointer; padding: 12px; border-radius: 15px; }
+.control-prev { left: 15px; }
+.control-next { right: 15px; }
+.control-prev:hover, .control-next:hover { background-color: darkorange; transition: background-color 0.3s ease; }
+</style>
+</head>
+
+<body>
+<section>
+    <div id="presentationSlider" class="slider">
+        <div class="slides">
+
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="caja">
+                    <img src="../sitio ultimo/logo.png" class="logo" style="width: 16%; margin: 20px auto;">
+                    <h1 class="titulo">KIDDO</h1>
+                    <div class="texto">
+                        <p>Alumno: Maximo Martin</p>
+                        <p>Profesor: Wenceslao Zavala</p>
+                        <p>Materia: Materiales y Procesos I</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="caja">
+                    <h1 class="titulo">¿De que trata la pagina?</h1>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="caja">
+                    <h2 class="titulo">¿QUE ES KIDDO? </h2>
+                    <img src="hamburguesa.png" alt="Hamburguesa" style="width: 40%; border-radius: 15px;">
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="caja">
+                    <h2 class="titulo">Pagina web de inicio</h2>
+                    <div class="texto">
+                        <p>Sencilla y fácil de navegar</p>
+                        <p>Colores Principales de Kiddo</p>
+                    </div>
+					<img src="Paginakiddo.png" alt="Hamburguesa" style="width: 40%; border-radius: 15px;">
+                </div>
+            </div>
+
+            <!-- Slide Final -->
+            <div class="slide">
+                <div class="caja" style="background-color: #1A84E9;">
+                    <h1 class="titulo" style="color: #1A84E9;">Ir a la página</h1>
+                    <div style= "width ; 100% ; display: flex; justify-content: center;">
+                        <a href="https://maximartin7.github.io/kiddo/index.html#home" class="pagina" style="background-color: darkorange; color: darkblue; border-radius: 15px; font-size: 2em; padding: 20px 40px; text-decoration: none; display : inline-block;">Visitar Página</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="control-prev" id="prev">&#10094;</button>
+        <button class="control-next" id="next">&#10095;</button>
+    </div>
+</section>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+
+        slides.forEach((slide, i) => {
+            slide.style.display = i === currentSlide ? 'flex' : 'none';
+        });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => showSlide(currentSlide - 1));
+    document.getElementById('next').addEventListener('click', () => showSlide(currentSlide + 1));
+
+    // Muestra la primera diapositiva al cargar la página
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>
